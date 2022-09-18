@@ -44,6 +44,8 @@ managed-opensearch-rest = { module = "org.opensearch.client:opensearch-rest-clie
 # micronaut-bom = { module = "io.micronaut:micronaut-bom", version.ref = "micronaut" }
 # jdoctor = { module = "me.champeau.jdoctor:jdoctor-core", version.ref="jdoctor" }
 
+# TestContainers
+
 testcontainers-opensearch = { module = "org.opensearch:testcontainers-opensearch" }
 testcontainers-spock = { module = "org.testcontainers:spock" }
 
