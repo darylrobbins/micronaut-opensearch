@@ -23,15 +23,16 @@ groovy = "3.0.12"
 spock = "2.1-groovy-3.0"
 
 # Managed versions appear in the BOM
-# managed-somelib = "1.0"
-# managed-somebom = "1.1"
+managed-opensearch-java = "2.1.0"
+managed-opensearch-core = "2.3.0"
 
 [libraries]
 
 #
 # Managed dependencies appear in the BOM
 #
-# managed-somelib = { module = "group:artifact", version.ref = "managed-somelib" }
+managed-opensearch-java = { module = "org.opensearch.client:opensearch-java", version.ref = "managed-opensearch-java" }
+managed-opensearch-rest = { module = "org.opensearch.client:opensearch-rest-client", version.ref = "managed-opensearch-core" }
 
 #
 # Imported BOMs, also appearing in the generated BOM
@@ -42,6 +43,9 @@ spock = "2.1-groovy-3.0"
 
 # micronaut-bom = { module = "io.micronaut:micronaut-bom", version.ref = "micronaut" }
 # jdoctor = { module = "me.champeau.jdoctor:jdoctor-core", version.ref="jdoctor" }
+
+testcontainers-opensearch = { module = "org.opensearch:testcontainers-opensearch" }
+testcontainers-spock = { module = "org.testcontainers:spock" }
 
 [bundles]
 

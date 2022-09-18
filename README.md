@@ -1,13 +1,15 @@
 <!-- Checklist: https://github.com/micronaut-projects/micronaut-core/wiki/New-Module-Checklist -->
 
-# Micronaut arch
+# Micronaut Opensearch
 
 [![Maven Central](https://img.shields.io/maven-central/v/io.micronaut.arch/micronaut-project-template.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.micronaut.project-template%22%20AND%20a:%22micronaut-project-template%22)
 [![Build Status](https://github.com/micronaut-projects/micronaut-arch/workflows/Java%20CI/badge.svg)](https://github.com/micronaut-projects/micronaut-project-template/actions)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=micronaut-projects_micronaut-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=micronaut-projects_micronaut-template)
 [![Revved up by Gradle Enterprise](https://img.shields.io/badge/Revved%20up%20by-Gradle%20Enterprise-06A0CE?logo=Gradle&labelColor=02303A)](https://ge.micronaut.io/scans)
 
-Micronaut arch
+Micronaut integration for Opensearch.
+
+We borrow heavily from micronaut-elasticsearch.
 
 ## Documentation
 

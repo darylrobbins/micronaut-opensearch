@@ -1,0 +1,39 @@
+plugins {
+    id 'io.micronaut.build.internal.arch-module'
+}
+
+dependencies {
+    annotationProcessor(mn.micronaut.graal)
+    api(libs.managed.opensearch.java)
+    api(libs.managed.opensearch.rest)
+    api(mn.micronaut.http)
+    api(mn.micronaut.validation)
+
+    compileOnly(mn.graal)
+    compileOnly(mn.micronaut.inject.java)
+    compileOnly(mn.micronaut.management)
+
+    testImplementation(libs.testcontainers.opensearch)
+    testImplementation(libs.testcontainers.spock)
+    testImplementation(mn.groovy.json)
+    testImplementation(mn.micronaut.inject.groovy)
+    testImplementation(mn.micronaut.inject.java)
+    testImplementation(mn.micronaut.inject.java.test)
+    testImplementation(mn.micronaut.management)
+    testImplementation(mn.micronaut.runtime)
+    testImplementation(mn.micronaut.security)
+    testImplementation(mn.reactor)
+}
+
+tasks.named('test') {
+    systemProperty 'opensearch.version', libs.versions.managed.opensearch.core.get()
+}
+
+// Newer versions of Opensearch are only compatible with Java 11+
+micronautBuild {
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
+    binaryCompatibility {
+        enabled = false
+    }
+}

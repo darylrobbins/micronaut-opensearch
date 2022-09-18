@@ -1,0 +1,29 @@
+plugins {
+    id 'io.micronaut.build.internal.arch-base'
+    id "io.micronaut.build.internal.bom"
+}
+
+group projectGroup
+version projectVersion
+
+micronautBom {
+    excludeProject.set({ p ->
+        p.name.contains('benchmark') || p.name.contains('example')
+    } as Spec<String>)
+}
+
+
+tasks.named("checkVersionCatalogCompatibility") {
+    onlyIf {
+        JavaVersion.current().isJava11Compatible()
+    }
+}
+
+// Newer versions of Opensearch are only compatible with Java 11+
+micronautBuild {
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
+    binaryCompatibility {
+        enabled = false
+    }
+}

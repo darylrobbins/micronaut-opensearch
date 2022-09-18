@@ -2,3 +2,9 @@ plugins {
     id "io.micronaut.build.internal.docs"
     id "io.micronaut.build.internal.quality-reporting"
 }
+
+// Newer versions of Opensearch are only compatible with Java 11+
+micronautBuild {
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
+}
